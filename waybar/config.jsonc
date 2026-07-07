@@ -1,0 +1,181 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 31,
+    "exclusive": true,
+    "passthrough": false,
+
+    "modules-left": ["custom/wbar","custom/theme","wlr/taskbar","custom/spotify"],
+    "modules-center": ["idle_inhibitor","clock"],
+    "modules-right": ["tray","battery","network","pulseaudio","pulseaudio#microphone","custom/weather","custom/notifications","custom/power"],
+
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout -p layer-shell",
+        "tooltip": false
+    },
+
+    "custom/wbar": {
+        "format": "{}",
+        "on-click": "killall waybar && waybar &",
+        "tooltip": false
+    },
+
+    "custom/theme": {
+        "format": "{}",
+        "on-click": "echo 'theme switch coming soon'",
+        "tooltip": false
+    },
+
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "spacing": 0,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close"
+    },
+
+    "custom/spotify": {
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py",
+        "format": "{}",
+        "return-type": "json",
+        "on-click": "playerctl play-pause",
+        "on-click-right": "playerctl next",
+        "max-length": 25,
+        "escape": true,
+        "tooltip": false
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰥔",
+            "deactivated": "󰒲"
+        },
+        "tooltip": false
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%R 󰃭 %d·%m·%y}",
+        "tooltip-format": "<span>{calendar}</span>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "tray": {
+        "icon-size": 18,
+        "spacing": 5
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-"
+    },
+
+    "network": {
+        "tooltip": true,
+        "format-wifi": "󰤨{signalStrength}%",
+        "format-ethernet": "󰈀{ifname}",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal: <b>{signalStrength}%</b>\nIP: <b>{ipaddr}/{cidr}</b>",
+        "format-linked": "󰈀{ifname} (No IP)",
+        "format-disconnected": "󰖪Disconnected",
+        "format-alt": "{bandwidthDownBytes} {bandwidthUpBytes}",
+        "interval": 2
+    },
+
+    "pulseaudio": {
+        "format": "{icon}{volume}",
+        "format-muted": "婢",
+        "on-click": "pavucontrol",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        }
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "on-click": "pavucontrol -t 4"
+    },
+
+    "custom/notifications": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "󰂚",
+            "none": "󰂚",
+            "dnd-notification": "󰂛",
+            "dnd-none": "󰂛"
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "custom/weather": {
+        "exec": "curl -s 'wttr.in/?format=%t+%C'",
+        "interval": 600,
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "custom/keybindhint": {
+        "format": " ",
+        "on-click": "echo 'keybind hint'"
+    },
+
+    "custom/l_end": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/r_end": {
+        "format": " ",
+        "interval": "once",
+        "tooltip": false
+    },
+
+    "custom/padd": {
+        "format": "  ",
+        "interval": "once",
+        "tooltip": false
+    }
+}

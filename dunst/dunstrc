@@ -1,0 +1,66 @@
+# DUNST — single purpose: notification daemon
+
+[global]
+    monitor = 0
+    follow = mouse
+    origin = top-right
+    offset = 20x20
+    scale = 0
+
+    width = 320
+    height = 120
+    notification_limit = 3
+    shrink = no
+    transparency = 0
+    padding = 15
+    horizontal_padding = 15
+    text_icon_padding = 12
+    frame_width = 2
+    corner_radius = 12
+
+    separator_color = frame
+    separator_height = 2
+
+    sort = yes
+    idle_threshold = 120
+    font = JetBrainsMono Nerd Font 11
+    line_height = 4
+    markup = full
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+
+    stack_duplicates = yes
+    hide_duplicate_count = no
+    show_indicators = yes
+
+    icon_position = left
+    max_icon_size = 48
+    icon_theme = Papirus-Dark
+    enable_recursive_icon_lookup = yes
+
+    mouse_left = do_action
+    mouse_middle = close_current
+    mouse_right = close_all
+
+    timeout = 5
+    timeout_low = 3
+    timeout_critical = 0
+
+[urgency_low]
+    background = "#1d202f"
+    foreground = "#a9b1d6"
+    frame_color = "#414868"
+    timeout = 3
+
+[urgency_normal]
+    background = "#1d202f"
+    foreground = "#c0caf5"
+    frame_color = "#7aa2f7"
+    timeout = 5
+
+[urgency_critical]
+    background = "#1d202f"
+    foreground = "#c0caf5"
+    frame_color = "#f7768e"
+    timeout = 0

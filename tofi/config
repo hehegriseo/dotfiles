@@ -1,0 +1,23 @@
+# Catppuccin Mocha
+text-color = #cdd6f4
+prompt-color = #f38ba8
+selection-color = #f9e2af
+background-color = #1e1e2e
+
+# Layout
+width = 40
+height = 400
+border-width = 2
+corner-radius = 12
+outline-width = 0
+padding-top = 20
+padding-bottom = 20
+padding-left = 25
+padding-right = 25
+prompt-text = "  "
+placeholder-text = " Search..."
+font = JetBrainsMono Nerd Font
+font-size = 16
+anchor = center
+horizontal = false
+vertical = false

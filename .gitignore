@@ -1,0 +1,37 @@
+# Ignore browser data and large dirs
+BraveSoftware/
+google-chrome/
+chromium/
+Code - OBS/
+nvm/
+go/
+gh/
+mozilla/
+spotify/
+zoom/
+discord/
+opencode/
+lazygit/
+postman/
+vencord/
+blender/
+obs-studio/
+mpv/
+vlc/
+create-nextjs-nodejs/
+nextjs-nodejs/
+monero-project/
+Postman/
+Soundux/
+Meltytech/
+Antigravity/
+cfg_backups/
+autostart/
+session/
+shell/
+systemd/
+xdg-terminals.list
+*.lock
+.cache/
+local/
+share/
